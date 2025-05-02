@@ -1,0 +1,45 @@
+/* Background and Hero Section */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(to right, #000000, #333333);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Custom Button Styling */
+.btn-custom {
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #ffffff;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.btn-custom:hover {
+    background-color: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+/* Text Styling */
+h1.display-3 {
+    font-weight: 700;
+    font-size: 3.5rem;
+}
+
+.lead {
+    font-size: 1.2rem;
+    color: #aaaaaa;
+    margin-top: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    h1.display-3 {
+        font-size: 2.5rem;
+    }
+}

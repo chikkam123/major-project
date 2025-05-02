@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Quiz</title>
+</head>
+<body>
+    <h2>Create a Quiz</h2>
+    <form method="POST">
+        <label for="quiz_name">Quiz Name:</label>
+        <input type="text" name="quiz_name" required><br>
+        
+        <label for="course_id">Course:</label>
+        <select name="course_id" required>
+            {% for course in courses %}
+                <option value="{{ course.id }}">{{ course.name }}</option>
+            {% endfor %}
+        </select><br>
+
+        <h3>Questions</h3>
+        <div id="questions">
+            <div>
+                <label>Question:</label>
+                <input type="text" name="question_text" required>
+                <label>Correct Answer:</label>
+                <input type="text" name="correct_answer" required>
+            </div>
+        </div>
+        <button type="submit">Create Quiz</button>
+    </form>
+</body>
+</html>

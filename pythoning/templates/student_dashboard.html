@@ -1,0 +1,76 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+        }
+        .quiz-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .quiz-item {
+            background-color: #fff;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .quiz-item h3 {
+            margin: 0;
+        }
+        .quiz-item button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .quiz-item button:hover {
+            background-color: #0056b3;
+        }
+        .logout-link {
+            margin-top: 20px;
+            display: inline-block;
+            color: #ff4d4d;
+            text-decoration: none;
+        }
+        .logout-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome, {{ user.username }}</h1>
+    <h2>Your Available Quizzes:</h2>
+
+    {% if quizzes %}
+    <ul class="quiz-list">
+        {% for quiz in quizzes %}
+        <li class="quiz-item">
+            <h3>{{ quiz.title }}</h3>
+            <p>{{ quiz.description }}</p>
+            <button onclick="location.href='{{ url_for('add_quiz', quiz_id=quiz.id) }}'">
+                Attempt Quiz
+            </button>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No quizzes available right now. Check back later!</p>
+    {% endif %}
+
+    <a href="{{ url_for('logout') }}" class="logout-link">Logout</a>
+</body>
+</html>-->

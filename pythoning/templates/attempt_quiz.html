@@ -1,0 +1,82 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <title>Attempt Quiz</title>
+</head>
+<body>
+    <h2>Quiz: {{ quiz.title }}</h2>
+    <form method="POST">
+        {% for question in quiz.questions %}
+            <div style="margin-bottom: 20px;">
+                <strong>Q{{ loop.index }}: {{ question.text }}</strong><br>
+                <label><input type="radio" name="q{{ question.id }}" value="A" required> A. {{ question.option_a }}</label><br>
+                <label><input type="radio" name="q{{ question.id }}" value="B"> B. {{ question.option_b }}</label><br>
+                <label><input type="radio" name="q{{ question.id }}" value="C"> C. {{ question.option_c }}</label><br>
+                <label><input type="radio" name="q{{ question.id }}" value="D"> D. {{ question.option_d }}</label>
+            </div>
+        {% endfor %}
+        <button type="submit">Submit Quiz</button>
+    </form>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attempt Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            padding: 30px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .question-block {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        label {
+            display: block;
+            margin: 8px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #007bff;
+            color: #fff;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>Quiz: {{ quiz.title }}</h2>
+
+    <form method="POST">
+        {% for question in quiz.questions %}
+            <div class="question-block">
+                <strong>Q{{ loop.index }}: {{ question.text }}</strong><br>
+                <label><input type="radio" name="question_{{ question.id }}" value="A" required> A. {{ question.option_a }}</label>
+                <label><input type="radio" name="question_{{ question.id }}" value="B"> B. {{ question.option_b }}</label>
+                <label><input type="radio" name="question_{{ question.id }}" value="C"> C. {{ question.option_c }}</label>
+                <label><input type="radio" name="question_{{ question.id }}" value="D"> D. {{ question.option_d }}</label>
+            </div>
+        {% endfor %}
+        <button type="submit">Submit Quiz</button>
+    </form>
+</body>
+</html>
+

@@ -1,0 +1,389 @@
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h2>Admin Dashboard</h2>
+    <form action="{{ url_for('add_user') }}" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" name="username" required><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" name="email" required><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" name="password" required><br>
+        
+        <label for="role">Role:</label>
+        <select name="role">
+            <option value="teacher">Teacher</option>
+            <option value="student">Student</option>
+        </select><br>
+        
+        <button type="submit">Add User</button>
+    </form>
+    
+    <h3>All Users:</h3>
+    <ul>
+        {% for user in users %}
+            <li>{{ user.username }} - {{ user.role }}</li>
+        {% endfor %}
+    </ul>
+    
+    <a href="/logout">Logout</a>
+</body>
+</html>-->
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        /* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full-screen background */
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full-screen background */
+body, html {
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background: url('../images/image.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.dashboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Subtle dark overlay */
+}
+
+.dashboard-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+label {
+    color: #555;
+    font-weight: 600;
+    display: block;
+    margin: 15px 0 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: #888;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #28a745; /* Green color for better contrast */
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.user-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.user-list li {
+    background-color: #f8f9fa;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.logout-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #dc3545; /* Red for logout */
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #c82333;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .dashboard-content {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="dashboard-content">
+            <h2>Admin Dashboard</h2>
+            <form action="{{ url_for('add_user') }}" method="POST" class="add-user-form">
+                <label for="username">Username:</label>
+                <input type="text" name="username" required><br>
+                
+                <label for="email">Email:</label>
+                <input type="email" name="email" required><br>
+                
+                <label for="password">Password:</label>
+                <input type="password" name="password" required><br>
+                
+                <label for="role">Role:</label>
+                <select name="role">
+                    <option value="teacher">Teacher</option>
+                    <option value="student">Student</option>
+                </select><br>
+                
+                <button type="submit">Add User</button>
+            </form>
+            
+            <h3>All Users:</h3>
+            <ul class="user-list">
+                {% for user in users %}
+                    <li>{{ user.username }} - {{ user.role }}</li>
+                {% endfor %}
+            </ul>
+            
+            <a href="/logout" class="logout-button">Logout</a>
+        </div>
+    </div>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Section */
+.form-section {
+    flex: 1;
+    padding: 20px;
+    border-right: 1px solid #e0e0e0;
+}
+
+.form-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.form-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-section label {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #555;
+}
+
+.form-section input, 
+.form-section select {
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-section button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.form-section button:hover {
+    background-color: #45a049;
+}
+
+/* Users Section */
+.users-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.users-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.users-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.users-section li {
+    padding: 10px;
+    background: #f0f0f0;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    color: #333;
+}
+
+/* Logout Button */
+.logout-btn {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #d73833;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .form-section {
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-section">
+            <h2>Add New User</h2>
+            <form action="{{ url_for('add_user') }}" method="POST">
+                <label for="username">Username:</label>
+                <input type="text" name="username" required>
+
+                <label for="email">Email:</label>
+                <input type="email" name="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" name="password" required>
+
+                <label for="role">Role:</label>
+                <select name="role">
+                    <option value="teacher">Teacher</option>
+                    <option value="student">Student</option>
+                </select>
+
+                <button type="submit">Add User</button>
+            </form>
+        </div>
+
+        <div class="users-section">
+            <h2>All Users</h2>
+            <ul>
+                {% for user in users %}
+                    <li>{{ user.username }} - {{ user.role }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <a class="logout-btn" href="/logout">Logout</a>
+</body>
+</html>
+
+
+
